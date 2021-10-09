@@ -11,6 +11,6 @@ Trending Git App
 
 Screen Shots
 
-img[alt=drawing](screenshot/trending_list.jpg) { width: 400px; }
-img[alt=drawing](screenshot/repo_detail.jpg) { width: 400px; }
-img[alt=drawing](screenshot/user_repo_list.jpg) { width: 400px; }
+![drawing](screenshot/trending_list.jpg)
+![drawing](screenshot/repo_detail.jpg)
+![drawing](screenshot/user_repo_list.jpg)
