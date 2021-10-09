@@ -3,7 +3,7 @@ package com.ankit.trendinggit.model.api
 import com.ankit.trendinggit.view.utils.Constants.Companion.BASE_URL
 import com.ankit.trendinggit.view.utils.Constants.Companion.DEBUG
 import com.ankit.trendinggit.view.utils.Constants.Companion.REQUEST_TIMEOUT_DURATION
-import com.google.gson.GsonBuilder
+//import com.google.gson.GsonBuilder
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -14,13 +14,13 @@ import java.util.concurrent.TimeUnit
 object ApiClient {
 
     val instance: ApiService = Retrofit.Builder().run {
-        val gson = GsonBuilder()
-                .enableComplexMapKeySerialization()
-                .setPrettyPrinting()
-                .create()
+//        val gson = GsonBuilder()
+//                .enableComplexMapKeySerialization()
+//                .setPrettyPrinting()
+//                .create()
 
         baseUrl(BASE_URL)
-        addConverterFactory(GsonConverterFactory.create(gson))
+        addConverterFactory(GsonConverterFactory.create())
         client(createRequestInterceptorClient())
         build()
     }.create(ApiService::class.java)

@@ -5,12 +5,12 @@ import com.ankit.trendinggit.model.Item
 import com.ankit.trendinggit.model.RepoRepository
 import com.ankit.trendinggit.view.base.BaseViewModel
 
-class RepoListViewModel : BaseViewModel() {
+class RepoListViewModel(private val repo: RepoRepository) : BaseViewModel() {
     val repoListLive = MutableLiveData<List<Item>>()
 
-    fun fetchRepoList() {
+    fun fetchTrendingRepoList() {
         dataLoading.value = true
-        RepoRepository.getInstance().getRepoList { isSuccess, response ->
+        repo.getTrendingRepositories { isSuccess, response ->
             dataLoading.value = false
             if (isSuccess) {
                 repoListLive.value = response?.items
@@ -21,19 +21,19 @@ class RepoListViewModel : BaseViewModel() {
         }
     }
 
-    fun fetchUserRepos(username: String) {
+    fun fetchUserRepoList(username: String) {
         dataLoading.value = true
-        RepoRepository.getInstance().getUserRepos(username) { isSuccess, response ->
-                dataLoading.value = false
-                if (isSuccess) {
-                    empty.value = true
-                    if(response != null) {
-                        repoListLive.value = response
-                        empty.value = false
-                    }
-                } else {
-                    empty.value = true
+        repo.getUserRepositories(username) { isSuccess, response ->
+            dataLoading.value = false
+            if (isSuccess) {
+                empty.value = true
+                if (response != null) {
+                    repoListLive.value = response
+                    empty.value = false
                 }
+            } else {
+                empty.value = true
             }
+        }
     }
 }

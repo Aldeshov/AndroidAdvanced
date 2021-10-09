@@ -8,13 +8,14 @@
     <application
         android:name=".TrendingGitApp"
         android:allowBackup="false"
-        android:icon="@drawable/git_icon"
+        android:icon="@drawable/ic_git"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
             android:name="com.ankit.trendinggit.view.ui.MainActivity"
+            android:exported="true"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

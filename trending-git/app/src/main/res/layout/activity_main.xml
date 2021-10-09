@@ -35,7 +35,8 @@
             android:id="@+id/trending_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/trending">
+            android:text="@string/trending"
+            android:onClick="onClickTrending">
         </Button>
         <EditText
             android:id="@+id/username"
@@ -50,7 +51,8 @@
             android:id="@+id/go_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/go">
+            android:text="@string/go"
+            android:onClick="onClickGo">
         </Button>
     </LinearLayout>
 
