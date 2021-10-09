@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Trending Git</string>
+    <string name="empty_text">No repo to display</string>
+    <string name="avatar">Avatar</string>
+    <string name="fork">Fork</string>
+    <string name="star">Star</string>
+    <string name="trending">Trending</string>
+    <string name="go">Go</string>
+</resources>
